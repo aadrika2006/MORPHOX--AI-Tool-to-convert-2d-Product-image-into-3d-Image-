@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+opencv-python
+torch
+open3d
+numpy
+segment-anything
+midas
