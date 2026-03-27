@@ -45,7 +45,7 @@ Mesh Generation (Open3D)
 - Open3D
 
 ### AI Models
-- Segment Anything Model (SAM) – Meta AI
+- TripoSR
 - MiDaS – Intel Intelligent Systems Lab
 
 ### Frontend
