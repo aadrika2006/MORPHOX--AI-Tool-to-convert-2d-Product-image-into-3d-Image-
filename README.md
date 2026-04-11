@@ -6,7 +6,7 @@ Built as a 6th Semester IT PBL Project.
 
 ---
 
-## 🚀 Project Overview
+## Project Overview
 
 MORPHIX takes a 2D image (like shoes, products, objects) and performs:
 
@@ -19,7 +19,7 @@ The goal is to automate 3D model generation for e-commerce and AR/VR application
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 Frontend (React / Static)
 ↓
@@ -35,7 +35,7 @@ Mesh Generation (Open3D)
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend
 - FastAPI
@@ -54,7 +54,7 @@ Mesh Generation (Open3D)
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ai-3d-product-generator/
 │
@@ -72,8 +72,7 @@ ai-3d-product-generator/
 │
 └── README.md
 
-## ⚙️ Installation Guide
-
+##  Installation Guide
 ### 1️⃣ Clone the Repository
 
 bash
