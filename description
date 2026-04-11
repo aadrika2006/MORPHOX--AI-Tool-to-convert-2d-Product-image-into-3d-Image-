@@ -1,0 +1,30 @@
+import torch
+from diffusers import DiffusionPipeline, EulerAncestralDiscreteScheduler
+from PIL import Image
+
+print("Loading Zero123++... (first run downloads model)")
+
+pipe = DiffusionPipeline.from_pretrained(
+    "sudo-ai/zero123plus-v1.1",
+    custom_pipeline="sudo-ai/zero123plus-pipeline",
+    torch_dtype=torch.float16,
+    trust_remote_code=True
+)
+
+pipe.scheduler = EulerAncestralDiscreteScheduler.from_config(pipe.scheduler.config)
+
+pipe = pipe.to("cuda")
+
+image = Image.open("input.png").convert("RGB")
+
+images = pipe(
+    image,
+    num_inference_steps=30,
+    guidance_scale=3.0
+).images
+
+# save outputs
+for i, img in enumerate(images):
+    img.save(f"view_{i}.png")
+
+print("Done! Generated views.")

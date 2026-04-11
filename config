@@ -1,0 +1,23 @@
+                            ---- CONNECT LAPTOP TO CHARGER BEFORE RUNNING THIS OR GPU WON'T WORK----
+
+
+ctrl+shift+p->select python interpretor->select myenv(3.10)
+go to terminal(ctrl+j)
+cd TripoSR(go inside that folder)
+python run.py input.png(or if you want other examples just put them here in tripo sr and use python run.py imgname.format ) 
+image format can be png,jpg,jpeg(don't use heic pictures)
+
+output will be stored in output folder inside TripoSR
+output name is mesh.obj
+
+----to show project----
+open blender(don't panic if it crashes ,try opening it again)
+select the default cube that pops up. right click on it and select delete option
+
+after this on the top click file->click import->click wavefront(.obj)(this is the file you'll be opening)->
+go to c drive/vs code/aadrika 3d/TripoSR/output/0/mesh.obj   your file will be here
+select the file and it will open
+the model will be visible now. Zoom in,zoom out scroll around or do whatever to display it
+
+
+
