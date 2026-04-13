@@ -1,0 +1,41 @@
+name: Build and Attest
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
+      attestations: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build file
+        run: |
+          mkdir output
+          echo "Hello world" > output/result.txt
+
+      - name: Generate SHA256 digest
+        id: hash
+        run: |
+          DIGEST=$(sha256sum output/result.txt | awk '{print $1}')
+          echo "digest=$DIGEST" >> $GITHUB_OUTPUT
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: output/result.txt
+
+      - name: Attest Build Provenance
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-name: my-artifact
+          subject-digest: sha256:${{ steps.hash.outputs.digest }}
